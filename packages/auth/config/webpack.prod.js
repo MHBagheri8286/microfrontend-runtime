@@ -7,7 +7,7 @@ const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
-    publicPath: '/auth/latest/'
+    publicPath: '/auth/latest/',
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -16,7 +16,21 @@ const prodConfig = {
       exposes: {
         './AuthApp': './src/bootstrap',
       },
-      shared: packageJson.dependencies,
+      shared: {
+        ...packageJson.dependencies,
+        react: {
+          singleton: true,
+          requiredVersion: packageJson.dependencies.react,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: packageJson.dependencies['react-dom'],
+        },
+        'react-router-dom': {
+          singleton: true,
+          requiredVersion: packageJson.dependencies['react-router-dom'],
+        },
+      },
     }),
   ],
 };
