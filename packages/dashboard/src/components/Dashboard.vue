@@ -485,7 +485,7 @@ h6 {
 }
 
 @mixin linear-gradient-left($left, $right) {
-  background: $left; /* Old browsers */
+  background: $left;
   background: linear-gradient(to right, $left 0%, $right 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$left, endColorstr=$right,GradientType=1 ); /* IE6-9 */
 }
