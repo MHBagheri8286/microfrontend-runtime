@@ -11,9 +11,7 @@ const devConfig = {
   },
   devServer: {
     port: 8083,
-    historyApiFallback: {
-      historyApiFallback: true,
-    },
+    historyApiFallback: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
