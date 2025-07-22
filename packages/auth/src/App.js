@@ -9,12 +9,11 @@ export default ({ history, onSignIn }) => {
   const [location, setLocation] = useState(history.location);
 
   useEffect(() => {
-    // Listen to history changes and update location state
-    const unlisten = history.listen((update) => {
+    const onListen = history.listen((update) => {
       setLocation(update.location);
     });
 
-    return unlisten; // Clean up the listener on unmount
+    return onListen;
   }, [history]);
 
   return (
