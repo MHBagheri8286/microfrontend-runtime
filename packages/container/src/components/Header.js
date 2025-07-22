@@ -1,10 +1,9 @@
-import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { Link as RouterLink } from 'react-router-dom';
-import { Box } from '@mui/material';
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Header({ isSignedIn, onSignOut }) {
   const onClick = () => {
@@ -23,14 +22,14 @@ export default function Header({ isSignedIn, onSignOut }) {
           borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
         }}
       >
-        <Toolbar sx={{ flexWrap: 'wrap', justifyContent: 'space-between' }}>
+        <Toolbar sx={{ flexWrap: "wrap", justifyContent: "space-between" }}>
           <Typography
             variant="h6"
             color="inherit"
             noWrap
             component={RouterLink}
             to="/"
-            sx={{ textDecoration: 'none' }}
+            sx={{ textDecoration: "none" }}
           >
             App
           </Typography>
@@ -39,10 +38,10 @@ export default function Header({ isSignedIn, onSignOut }) {
             variant="outlined"
             sx={{ my: 1, mx: 1.5 }}
             component={RouterLink}
-            to={isSignedIn ? '/' : '/auth/signin'}
+            to={isSignedIn ? "/" : "/auth/signin"}
             onClick={onClick}
           >
-            {isSignedIn ? 'Logout' : 'Login'}
+            {isSignedIn ? "Logout" : "Login"}
           </Button>
         </Toolbar>
       </AppBar>
