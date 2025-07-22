@@ -8,7 +8,7 @@ export default ({ onSignIn }) => {
   const navigate = useNavigate();
   const onParentNavigateRef = useRef(null);
 
-  // Mount the microfrontend once
+  // Mount the micro-frontend once
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
       initialPath: location.pathname,
@@ -19,7 +19,7 @@ export default ({ onSignIn }) => {
     });
 
     onParentNavigateRef.current = onParentNavigate;
-  }, []); // Empty dependency - mount once
+  }, []);
 
   // Sync navigation from container to child
   useEffect(() => {
